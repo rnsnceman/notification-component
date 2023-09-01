@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+* {
+margin: 0;
+box-sizing:border-box;
+font-size: 16px;
+font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+background-color: hsla(205, 33%, 90%, 0.323);
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: grey;
+}
+
+main {
+width: 700px;
+padding: 30px;
+border-radius: 15px;
+background-color: white;
+}
+
+@media (max-width: 699px) {
+    main {
+        width: auto;
+        max-width: 700px;
+    }
+}
+
+@media (max-width:480px) {
+.all-buttons {
+        display: flex;
+        flex-direction: column;
+    }
+#separate {
+        display: none;
+    }
+}
+
+.name {
+color: black;
+}
+
+.top-head {
+display: flex;
+justify-content: space-between;
+margin-bottom: 20px;
+}
+
+.all-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.notification {
+padding: 1rem;
+margin-block: 6px;
+display: flex;
+justify-content: space-between;
+cursor: pointer;
+border-radius: 10px;
+-webkit-user-select: none; /* Safari */
+-ms-user-select: none; /* IE 10 and IE 11 */
+user-select: none; /* Standard syntax */
+position: relative;
+}
+
+.n-left {
+    display: grid;
+    grid-template-areas: 
+    "avatar info info" 
+    "avatar date date" 
+    ". msg msg";
+    justify-content: flex-start;
+}
+
+.notification:hover {
+background-color: hsla(205, 33%, 90%, 0.177)
+}
+
+.avatar {
+grid-area: avatar;
+width: 42px;
+margin-right: 15px;
+}
+
+.photo {
+width: 50px;
+height: 50px;
+grid-area: photo;
+}
+
+.notification p { 
+grid-area: info;
+line-height: 22px;
+width: 100%;
+}
+
+.date {
+grid-area: date;
+color: hsl(202, 4%, 64%);
+}
+
+.msg {
+grid-area: msg;
+border: 1px solid hsl(205, 33%, 90%);
+border-radius: 6px;
+padding: 15px;
+margin-top: 10px;
+}
+
+.msg:hover {
+background-color: hsla(205, 49%, 83%, 0.3);
+cursor: pointer;
+}
+
+.unread {
+background-color: hsla(205, 33%, 90%, 0.346);
+
+}
+
+.name {
+font-weight: 800;
+margin-right: 3px;
+}
+
+
+footer {
+margin-block: 20px;
+}
+
+h1 {
+font-size: 25px;
+color: black;
+}
+
+.post {
+font-weight: 800;
+margin-right:1px;
+}
+
+.group {
+font-weight: 800;
+margin-right: 1px;
+}
+
+.action {
+margin-right: 1px;
+}
+
+.name:hover, .post:hover, #mark-read:hover, .group:hover, #remove-all:hover {
+color: hsl(222, 100%, 30%);
+cursor: pointer;
+}
+
+#head-left {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#note-number {
+margin-inline: 9px;
+background-color: hsl(222, 70%, 27%);
+color: white;
+font-weight: 800;
+padding: 1px 10px;
+border-radius: 5px;
+}
+
+.red-circle {
+background-color: red;
+border-radius: 50px;
+height: 9px;
+width: 9px;
+display: inline-block;
+animation: circle .4s infinite alternate;
+position: relative;
+left: 2px;
+}
+
+@keyframes circle {
+to {
+transform: scale(1.2);
+box-shadow: 0 0 6px rgb(255, 0, 0);
+}
+}
+
+.settings { 
+height: 30px;
+width: 30px;
+border-radius: 50px;
+position: absolute;
+align-self: center;
+cursor: pointer;
+font-weight: 800;
+background-color: rgb(255, 255, 255);
+color: gray;
+text-align: center;
+box-shadow: 0 0 5px rgba(120, 120, 120, 0.473);
+right: 15px;
+top: 23px;
+pointer-events: none; /* Disable pointer events by default */
+ display: none;
+  transition: opacity 0.2s, pointer-events 0.2s;
+}
+
+.dd {
+background-color: hsl(202, 36%, 96%);
+width: auto;
+height: 80px;
+position: absolute;
+right: 0;
+flex-direction: column;
+justify-content: center;
+text-align: left;
+white-space: nowrap;
+border-radius: 12px;
+box-shadow: 3px 3px 5px rgba(120, 120, 120, 0.226);
+display: none;
+  transition: opacity 0.2s;
+  z-index: 1000;
+}
+
+.dd > p {
+font-size: 12px;
+font-weight: 400;
+padding: 5px 10px ;
+}
+.dd > p:hover{
+color: black;
+transition: 0.2s;
+background-color: white;
+}
+
+.settings:hover {
+transition: 0.1s;
+}
+
+.fa, .fa-regular {
+margin-right: 5px;
+}
+
+.notification:hover .settings {
+    pointer-events: auto;
+}
+
+.no-notifications {
+    margin-top: 20px;
+    text-align: center;
+    font-style: italic;
+    color: gray;
+}
