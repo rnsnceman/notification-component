@@ -36,7 +36,7 @@ Extra features:
 
 ### Screenshot
 
-![](Notifications Component.png)
+![](NotificationsComponent.png)
 
 ### Links
 
